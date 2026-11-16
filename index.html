@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0b1f3f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Knut's Kite Game</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<button id="mute" class="tb small" aria-label="Toggle sound">🔊</button>
+
+<div id="controls" class="hidden">
+  <button id="bLoop" class="tb">LOOP</button>
+  <button id="bSpin" class="tb">SPIN</button>
+  <button id="bGrab" class="tb">GRAB</button>
+  <button id="bPop" class="tb">POP</button>
+</div>
+
+<div id="start" class="overlay">
+  <div class="panel">
+    <h1>Knut's Kite Game</h1>
+    <div id="chal" class="banner hidden"></div>
+    <ol class="how">
+      <li>Drag to steer the kite. Swoop it through the <b>power zone</b> to build speed. Don't park it.</li>
+      <li>Hit <b>POP</b> (Space) on the wave lip to jump. Perfect timing = big air.</li>
+      <li>In the air: <b>LOOP</b> (L), <b>SPIN</b> (S), hold <b>GRAB</b> (G). Land clean!</li>
+    </ol>
+    <div id="bestStart" class="muted"></div>
+    <button id="startBtn" class="big">START</button>
+  </div>
+</div>
+
+<div id="results" class="overlay hidden scroll">
+  <div class="panel">
+    <h2>RUN OVER</h2>
+    <div class="stats">
+      <div><span id="rScore">0</span><small>points</small></div>
+      <div><span id="rHeight">0.0 m</span><small>best jump</small></div>
+    </div>
+    <p id="rTricks" class="muted"></p>
+    <p id="rBest"></p>
+    <p id="rChal" class="banner hidden"></p>
+    <img id="cardImg" alt="Story card preview">
+    <input id="rName" maxlength="20" autocomplete="off" placeholder="Your name for the link (optional)">
+    <div class="btns">
+      <button id="bShare">SHARE STORY CARD</button>
+      <button id="bDl">DOWNLOAD PNG</button>
+      <button id="bCopy">COPY CHALLENGE LINK</button>
+      <button id="bAgain" class="big">PLAY AGAIN</button>
+    </div>
+    <div id="toast"></div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
