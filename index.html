@@ -15,9 +15,17 @@
 <button id="mute" class="tb small" aria-label="Toggle sound">🔊</button>
 
 <div id="controls" class="hidden">
-  <button id="bLoop" class="tb">LOOP</button>
-  <button id="bSpin" class="tb">SPIN</button>
-  <button id="bGrab" class="tb">GRAB</button>
+  <div class="tgrid">
+    <div class="trow">
+      <button id="bLoop" class="tb">LOOP</button>
+      <button id="bSpin" class="tb">SPIN</button>
+      <button id="bGrab" class="tb">GRAB</button>
+    </div>
+    <div class="trow">
+      <button id="bOff" class="tb">BOARD OFF</button>
+      <button id="bPass" class="tb">PASS</button>
+    </div>
+  </div>
   <button id="bPop" class="tb">POP</button>
 </div>
 
@@ -28,10 +36,38 @@
     <ol class="how">
       <li>Drag to steer the kite. Swoop it through the <b>power zone</b> to build speed. Don't park it.</li>
       <li>Hit <b>POP</b> (Space) on the wave lip to jump. Perfect timing = big air.</li>
-      <li>In the air: <b>LOOP</b> (L), <b>SPIN</b> (S), hold <b>GRAB</b> (G). Land clean!</li>
+      <li>In the air: <b>LOOP</b> (L), <b>SPIN</b> (S), hold <b>GRAB</b> (G), <b>BOARD OFF</b> (B, press again to catch), <b>PASS</b> (H). Land clean!</li>
     </ol>
     <div id="bestStart" class="muted"></div>
     <button id="startBtn" class="big">START</button>
+  </div>
+</div>
+
+<div id="setup" class="overlay hidden scroll">
+  <div class="panel">
+    <h2>SETUP</h2>
+    <p id="setNote" class="banner hidden"></p>
+    <div class="opt">
+      <div class="lab">Kite size</div>
+      <div id="segKite" class="seg">
+        <button type="button" data-v="7">7 m</button><button type="button" data-v="9">9 m</button><button type="button" data-v="12">12 m</button>
+      </div>
+      <small>Bigger = more pull, slower turns</small>
+    </div>
+    <div class="opt">
+      <div class="lab">Line length</div>
+      <div id="segLine" class="seg">
+        <button type="button" data-v="15">15 m</button><button type="button" data-v="22">22 m</button><button type="button" data-v="27">27 m</button>
+      </div>
+      <small>Shorter = faster turns, smaller window</small>
+    </div>
+    <div class="opt">
+      <label class="lab" for="windIn">Wind <b id="windVal"></b></label>
+      <input id="windIn" type="range" min="10" max="30" step="0.1" value="15.6">
+      <small>10 kn · · · 30 kn</small>
+    </div>
+    <p id="setWarn" class="muted"></p>
+    <button id="goBtn" class="big">GO!</button>
   </div>
 </div>
 
@@ -43,6 +79,7 @@
       <div><span id="rHeight">0.0 m</span><small>best jump</small></div>
     </div>
     <p id="rTricks" class="muted"></p>
+    <p id="rSetup" class="muted"></p>
     <p id="rBest"></p>
     <p id="rChal" class="banner hidden"></p>
     <img id="cardImg" alt="Story card preview">
@@ -52,6 +89,7 @@
       <button id="bDl">DOWNLOAD PNG</button>
       <button id="bCopy">COPY CHALLENGE LINK</button>
       <button id="bAgain" class="big">PLAY AGAIN</button>
+      <button id="bSetup">CHANGE SETUP</button>
     </div>
     <div id="toast"></div>
   </div>

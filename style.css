@@ -28,6 +28,14 @@ button { font: inherit; cursor: pointer; touch-action: manipulation; }
   pointer-events: none;
 }
 #controls button { pointer-events: auto; }
+.tgrid { display: flex; flex-direction: column; gap: 8px; }
+.trow { display: flex; gap: 8px; }
+#bOff { font-size: 13px; letter-spacing: .02em; }
+@media (max-width: 350px) {
+  .tb { min-width: 54px; padding: 0 6px; font-size: 13px; }
+  #controls { gap: 6px; padding-left: 8px; padding-right: 8px; }
+  .trow, .tgrid { gap: 6px; }
+}
 #bPop {
   margin-left: auto; width: 96px; height: 96px; border-radius: 50%;
   background: #ffd23f; color: #0b1f3f; border: 3px solid #fff;
@@ -59,7 +67,20 @@ button.big, .btns button {
   background: rgba(255, 255, 255, .08); color: #fff; font-weight: 800; font-size: 16px;
 }
 button.big { background: #ffd23f; color: #0b1f3f; font-size: 20px; border-color: #ffd23f; }
-#startBtn { margin-top: 16px; }
+#startBtn, #goBtn { margin-top: 16px; }
+.opt { text-align: left; margin: 0 0 16px; }
+.opt .lab { display: block; font-weight: 800; margin-bottom: 6px; }
+.opt .lab b { color: #ffd23f; float: right; }
+.opt small { opacity: .75; font-size: 13px; }
+.seg { display: flex; gap: 8px; margin-bottom: 4px; }
+.seg button {
+  flex: 1; height: 48px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, .6);
+  background: rgba(255, 255, 255, .08); color: #fff; font-weight: 800; font-size: 17px;
+}
+.seg button.on { background: #33d6ff; border-color: #33d6ff; color: #0b1f3f; }
+#windIn { width: 100%; height: 36px; margin: 2px 0; accent-color: #33d6ff; touch-action: none; }
+.warn { color: #ff8c1a; font-weight: 700; font-size: 14px; }
+#setNote { font-size: 14px; }
 .stats { display: flex; gap: 10px; justify-content: center; }
 .stats div { flex: 1; background: rgba(255, 255, 255, .08); border-radius: 14px; padding: 10px; }
 .stats span { display: block; font-size: 32px; font-weight: 800; color: #33d6ff; }
